@@ -1,0 +1,111 @@
+occurrence_no,record_type,reid_no,flags,collection_no,identified_name,identified_rank,identified_no,difference,accepted_name,accepted_rank,accepted_no,early_interval,late_interval,max_ma,min_ma,reference_no,paleomodel,paleolng,paleolat,geoplate
+293807,occ,NA,NA,28009,Undorosaurus gorodischensis,species,173204,NA,Undorosaurus gorodischensis,species,173204,Late Jurassic,NA,163.5,145,7674,gp_mid,49.63,45.12,302
+293808,occ,NA,NA,28010,n. gen. Undorosaurus n. sp. gorodischensis,species,173204,NA,Undorosaurus gorodischensis,species,173204,Tithonian,NA,152.1,145,7674,gp_mid,49.21,44.61,302
+293809,occ,NA,NA,28011,Undorosaurus n. sp. nessovi,species,432079,NA,Undorosaurus nessovi,species,386525,Late Jurassic,NA,163.5,145,7674,gp_mid,49.63,45.12,302
+293810,occ,NA,NA,28012,Undorosaurus n. sp. khorlovensis,species,386528,NA,Undorosaurus khorlovensis,species,386528,Late Jurassic,NA,163.5,145,7674,gp_mid,41.1,42.81,302
+293811,occ,NA,NA,28013,Undorosaurus khorlovensis,species,386528,NA,Undorosaurus khorlovensis,species,386528,Late Jurassic,NA,163.5,145,7674,gp_mid,41.1,42.81,302
+293866,occ,NA,NA,28041,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Late Callovian,Early Oxfordian,164.7,155.7,7679,gp_mid,-40.08,28.01,101
+343565,occ,23642,NA,32321,Baptanodon n. sp. robustus,species,174057,recombined as,Ophthalmosaurus robustus,species,174057,Bathonian,Oxfordian,168.3,157.3,8710,gp_mid,-35.56,30.95,101
+384322,occ,NA,NA,36568,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Middle Oxfordian,NA,161.2,155.7,9743,gp_mid,20.75,30.85,305
+485535,occ,NA,NA,48614,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Late Jurassic,NA,163.5,145,12970,gp_mid,21.83,30.43,305
+527472,occ,NA,NA,53833,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Middle Callovian,NA,164.7,161.2,14495,gp_mid,18.56,35.93,315
+627684,occ,NA,NA,67698,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Middle Callovian,NA,164.7,161.2,19329,gp_mid,25.33,36.57,315
+653482,occ,NA,NA,70550,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Kimmeridgian,NA,157.3,152.1,23673,gp_mid,15.68,28.2,305
+658557,occ,NA,NA,70996,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Late Kimmeridgian,NA,155.7,150.8,23793,gp_mid,13.97,33.64,315
+758413,occ,NA,NA,59175,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Late Kimmeridgian,NA,155.7,150.8,27315,gp_mid,24.22,32.34,305
+821067,occ,28563,NA,79651,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Early Tithonian,NA,150.8,145,46429,gp_mid,-25.04,-47.24,291
+838800,occ,NA,NA,93105,Macropterygius ? sp.,genus,36560,nomen dubium,Ichthyopterygia,unranked clade,38869,Tithonian,NA,152.1,145,31457,gp_mid,13.18,33.29,315
+850536,occ,NA,NA,94532,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Late Kimmeridgian,NA,155.7,150.8,46679,gp_mid,16.91,26.69,305
+850537,occ,NA,NA,94532,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Late Kimmeridgian,NA,155.7,150.8,32157,gp_mid,16.91,26.69,305
+872310,occ,NA,NA,96679,Ophthalmosaurus natans,species,173198,NA,Ophthalmosaurus natans,species,96492,Oxfordian,NA,163.5,157.3,32894,gp_mid,-37.63,31.71,101
+872313,occ,NA,NA,96680,Ophthalmosaurus n. sp. chrisorum,species,242544,recombined as,Arthropterygius chrisorum,species,242544,Oxfordian,Kimmeridgian,163.5,152.1,32895,gp_mid,-15.83,61.23,106
+880206,occ,NA,NA,97635,Baptanodon n. sp. reedi,species,170321,recombined as,Ophthalmosaurus reedi,species,170321,Late Callovian,Early Oxfordian,164.7,155.7,33338,gp_mid,-37.85,29.96,101
+883035,occ,NA,NA,97913,Ophthalmosauria indet.,family,93392,obsolete variant of,Ophthalmosauridae,family,170908,Oxfordian,NA,163.5,157.3,33847,gp_mid,-40.17,-3.31,206
+884094,occ,NA,NA,98009,Brachypterygius extremus,species,170918,NA,Brachypterygius extremus,species,170918,Tithonian,NA,152.1,145,33885,gp_mid,30.91,-41.42,702
+884095,occ,NA,NA,98009,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Tithonian,NA,152.1,145,33885,gp_mid,30.91,-41.42,702
+884160,occ,NA,NA,98014,Brachypterygius extremus,species,170918,NA,Brachypterygius extremus,species,170918,Kimmeridgian,NA,157.3,152.1,33892,gp_mid,14.19,32.63,315
+899260,occ,NA,NA,100139,Apatodonosaurus grayi,species,173373,NA,Apatodonosaurus grayi,species,173373,Oxfordian,NA,163.5,157.3,34365,gp_mid,-38.46,29.25,101
+900689,occ,NA,NA,92052,Ichthyosaurus dilatatus,species,171437,nomen dubium,Ichthyosaurus,genus,36558,Late Callovian,NA,164.7,161.2,23773,gp_mid,17.95,35.06,315
+900692,occ,NA,NA,100518,Ichthyosaurus dilatatus,species,171437,nomen dubium,Ichthyosaurus,genus,36558,Callovian,NA,166.1,163.5,23773,gp_mid,19.04,35.46,315
+901178,occ,NA,NA,98478,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Tithonian,NA,152.1,145,23773,gp_mid,13.6,33.53,315
+901264,occ,NA,NA,100669,Ichthyosaurus dilatatus,species,171437,nomen dubium,Ichthyosaurus,genus,36558,Oxfordian,NA,163.5,157.3,23773,gp_mid,16.43,34.41,315
+902469,occ,NA,NA,101200,Baptanodon discus,species,174059,NA,Baptanodon discus,species,174058,Bathonian,Oxfordian,168.3,157.3,34565,gp_mid,-35.89,29.31,101
+908188,occ,NA,NA,102275,Ichthyosauria californicus,species,36543,species not entered,Ichthyosauria,unranked clade,36543,Tithonian,NA,152.1,145,34741,gp_mid,-57.21,32.25,129
+908439,occ,NA,NA,102300,Aegirosaurus leptospondylus,species,173196,NA,Aegirosaurus leptospondylus,species,171438,Early Tithonian,NA,150.8,145,34751,gp_mid,23.73,32.03,305
+908440,occ,NA,NA,102301,Aegirosaurus leptospondylus,species,173196,NA,Aegirosaurus leptospondylus,species,171438,Early Tithonian,NA,150.8,145,34751,gp_mid,23.75,32.03,305
+920237,occ,NA,NA,105081,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Middle Callovian,NA,164.7,161.2,35155,gp_mid,18.31,35.35,315
+929816,occ,NA,NA,106362,n. gen. Grendelius n. sp. mordax,species,179483,subjective synonym of,Brachypterygius extremus,species,170918,Early Tithonian,NA,150.8,145,35495,gp_mid,NA,NA,coordinates not computable using this model
+946773,occ,NA,NA,110176,Ophthalmosaurus cf. icenicus,species,170921,NA,Ophthalmosaurus icenicus,species,170921,Early Tithonian,NA,150.8,145,36323,gp_mid,-41.59,12.52,104
+990024,occ,NA,NA,119281,Ichthyosauria sp.,genus,36543,NA,Ichthyosauria,unranked clade,36543,Oxfordian,NA,163.5,157.3,38279,gp_mid,-36.97,30.33,101
+990028,occ,NA,NA,119283,Baptanodon discus,species,174059,NA,Baptanodon discus,species,174058,Oxfordian,NA,163.5,157.3,38280,gp_mid,-36.61,28.4,101
+1006664,occ,26287,NA,122657,cf. Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Late Tithonian,Early Berriasian,150.8,140.2,39106,gp_mid,15.54,35.65,315
+1006673,occ,NA,NA,122660,Caypullisaurus bonapartei,species,149989,NA,Caypullisaurus bonapartei,species,149989,Late Tithonian,NA,150.8,145,35024,gp_mid,-25.04,-47.24,291
+1006674,occ,NA,NA,122661,Caypullisaurus bonapartei,species,149989,NA,Caypullisaurus bonapartei,species,149989,Late Tithonian,NA,150.8,145,35024,gp_mid,-26.16,-46.24,291
+1062206,occ,NA,NA,131231,Ophthalmosaurus chrisorum,species,242544,recombined as,Arthropterygius chrisorum,species,242544,Oxfordian,Kimmeridgian,163.5,152.1,42394,gp_mid,-15.83,61.23,106
+1067115,occ,NA,NA,109800,n. gen. Ophthalmosaurus n. sp. icenicus,species,170921,NA,Ophthalmosaurus icenicus,species,170921,Middle Callovian,NA,164.7,161.2,33941,gp_mid,18.56,35.95,315
+1071714,occ,NA,NA,133067,Ophthalmosaurus icenicus,species,170921,NA,Ophthalmosaurus icenicus,species,170921,Middle Callovian,NA,164.7,161.2,42839,gp_mid,18.56,35.94,315
+1072830,occ,28682,NA,65030,Ichthyosaurus trigonus,species,171432,nomen dubium,Ichthyosaurus,genus,36558,Tithonian,NA,152.1,145,46850,gp_mid,15.84,32.81,315
+1072834,occ,NA,NA,48879,Ichthyosaurus aff. thyreospondylus,species,171440,nomen dubium,Ichthyosaurus,genus,36558,Tithonian,NA,152.1,145,42894,gp_mid,15.84,32.8,315
+1077966,occ,NA,NA,134764,n. gen. Cryopterygius n. sp. kristiansenae,species,248881,NA,Cryopterygius kristiansenae,species,248881,Tithonian,NA,152.1,145,43290,gp_mid,13.37,60.82,309
+1077967,occ,NA,NA,134765,n. gen. Palvennia n. sp. hoybergeti,species,248883,recombined as,Arthropterygius hoybergeti,species,248883,Tithonian,NA,152.1,145,43290,gp_mid,13.37,60.82,309
+1091216,occ,NA,NA,137144,Myobradypterygius n. sp. mollensis,species,252467,nomen dubium,Platypterygius,genus,36569,Late Jurassic,NA,163.5,145,43852,gp_mid,-24.63,-42.72,291
+1091226,occ,NA,NA,137145,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Late Jurassic,NA,163.5,145,43852,gp_mid,-24.56,-42.72,291
+1091228,occ,NA,NA,137147,Myobradypterygius n. sp. mendozanus,species,252465,subjective synonym of,Ophthalmosaurus icenicus,species,170921,Late Jurassic,NA,163.5,145,43853,gp_mid,-24.55,-43.31,291
+1094595,occ,NA,NA,138035,Ophthalmosaurus n. sp. undorensis,species,254133,NA,Ophthalmosaurus undorensis,species,254133,Late Kimmeridgian,NA,155.7,150.8,41485,gp_mid,49.7,44.95,302
+1094596,occ,NA,NA,138036,n. gen. Paraophthalmosaurus n. sp. saveljeviensis,species,170912,recombined as,Nannopterygius saveljeviensis,species,170912,Tithonian,NA,152.1,145,41485,gp_mid,50.79,42.31,302
+1094597,occ,NA,NA,138037,n. gen. Yasykovia n. sp. yasykovi,species,173201,recombined as,Ophthalmosaurus yasykovi,species,173201,Tithonian,NA,152.1,145,41485,gp_mid,48.96,44.52,302
+1094603,occ,NA,NA,138041,n. gen. Otschevia n. sp. pseudoscythica,species,170917,recombined as,Brachypterygius pseudoscythica,species,170917,Tithonian,NA,152.1,145,41485,gp_mid,48.84,44.68,302
+1098478,occ,NA,NA,138712,Ophthalmosauridae indet.,family,170908,NA,Ophthalmosauridae,family,170908,Late Tithonian,NA,150.8,145,44446,gp_mid,-42,12.82,104
+1103655,occ,NA,NA,72050,Arthropterygius sp.,genus,168510,NA,Arthropterygius,genus,168510,Tithonian,NA,152.1,145,44829,gp_mid,-25.21,-45.79,291
+1105158,occ,NA,NA,138291,Sphaerodontes caroli,species,258966,nomen dubium,Ichthyosauria,unranked clade,36543,Middle Oxfordian,Late Oxfordian,161.2,155.7,44921,gp_mid,-40.22,-3.89,206
+1108489,occ,NA,NA,134762,Brachypterygius sp.,genus,36544,NA,Brachypterygius,genus,36544,Tithonian,NA,152.1,145,45348,gp_mid,13.37,60.82,309
+1108508,occ,NA,NA,79652,Ophthalmosaurus monocharactus,species,260812,NA,Ophthalmosaurus monocharactus,species,260812,Early Tithonian,NA,150.8,145,45358,gp_mid,-25.7,-46.92,291
+1108540,occ,NA,NA,140285,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Late Tithonian,NA,150.8,145,45358,gp_mid,-26.16,-46.24,291
+1108576,occ,NA,NA,122661,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Late Tithonian,NA,150.8,145,45364,gp_mid,-26.16,-46.24,291
+1109785,occ,NA,NA,140543,Ophthalmosaurus natans,species,173198,NA,Ophthalmosaurus natans,species,96492,Late Callovian,Middle Oxfordian,164.7,155.7,45529,gp_mid,-34.49,30.9,101
+1121621,occ,NA,NA,142299,Ophthalmosaurus icenicus,species,170921,NA,Ophthalmosaurus icenicus,species,170921,Middle Callovian,NA,164.7,161.2,46193,gp_mid,18.56,35.95,315
+1125529,occ,NA,NA,138036,Paraophthalmosaurus n. sp. saratoviensis,species,170913,nomen dubium,Paraophthalmosaurus,genus,170911,Tithonian,NA,152.1,145,46313,gp_mid,50.79,42.31,302
+1125530,occ,NA,NA,138036,Brachypterygius n. sp. zhuravlevi,species,170920,recombined as,Grendelius zhuravlevi,species,170920,Tithonian,NA,152.1,145,46313,gp_mid,50.79,42.31,302
+1125543,occ,NA,NA,142714,n. gen. Khudiakovia n. sp. calloviensis,species,265520,NA,Khudiakovia calloviensis,species,265520,Callovian,NA,166.1,163.5,46314,gp_mid,57.38,43.74,302
+1126028,occ,NA,NA,104859,Ophthalmosauridae indet.,family,170908,NA,Ophthalmosauridae,family,170908,Early Tithonian,NA,150.8,145,46345,gp_mid,-41.55,12.59,104
+1126030,occ,NA,NA,104859,Ophthalmosaurus icenicus,species,170921,NA,Ophthalmosaurus icenicus,species,170921,Early Tithonian,NA,150.8,145,46345,gp_mid,-41.55,12.59,104
+1126068,occ,NA,NA,142847,Euichthyopterygia indet.,unranked clade,265584,NA,Euichthyopterygia,unranked clade,265584,Early Kimmeridgian,Late Kimmeridgian,155.7,150.8,46350,gp_mid,-40.06,11.79,104
+1126069,occ,NA,NA,142848,Euichthyopterygia indet.,unranked clade,265584,NA,Euichthyopterygia,unranked clade,265584,Early Kimmeridgian,Late Kimmeridgian,155.7,150.8,46350,gp_mid,-40.42,10.29,104
+1126070,occ,NA,NA,142849,Euichthyopterygia indet.,unranked clade,265584,NA,Euichthyopterygia,unranked clade,265584,Early Kimmeridgian,Late Kimmeridgian,155.7,150.8,46350,gp_mid,-40.95,11.46,104
+1126071,occ,NA,NA,142850,Euichthyopterygia indet.,unranked clade,265584,NA,Euichthyopterygia,unranked clade,265584,Early Kimmeridgian,Late Kimmeridgian,155.7,150.8,46350,gp_mid,-40.42,10.29,104
+1129475,occ,NA,NA,79652,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Early Tithonian,NA,150.8,145,46429,gp_mid,-25.7,-46.92,291
+1129480,occ,NA,NA,140285,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Late Tithonian,NA,150.8,145,46429,gp_mid,-26.16,-46.24,291
+1129617,occ,NA,NA,140700,Ophthalmosaurus n. sp. monocharactus,species,260812,NA,Ophthalmosaurus monocharactus,species,260812,Callovian,Oxfordian,166.1,157.3,46456,gp_mid,16.68,33.62,315
+1133807,occ,NA,NA,48880,Ichthyosaurus entheciodon,species,171439,NA,Ichthyosaurus entheciodon,species,171439,Tithonian,NA,152.1,145,18724,gp_mid,15.83,32.81,315
+1133808,occ,NA,NA,48880,Ichthyosaurus thyreospondylus,species,171440,nomen dubium,Ichthyosaurus,genus,36558,Tithonian,NA,152.1,145,18724,gp_mid,15.83,32.81,315
+1133827,occ,NA,NA,65033,Ophthalmosaurus cuvieri,species,36566,species not entered,Ophthalmosaurus,genus,36566,Kimmeridgian,NA,157.3,152.1,18724,gp_mid,16.96,33.12,315
+1134128,occ,NA,NA,144329,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Kimmeridgian,Tithonian,157.3,145,46661,gp_mid,-7.26,-72.91,803
+1134134,occ,NA,NA,142832,Euichthyopterygia indet.,unranked clade,265584,NA,Euichthyopterygia,unranked clade,265584,Kimmeridgian,NA,157.3,152.1,46663,gp_mid,-37.94,10.38,101
+1134139,occ,NA,NA,144332,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Kimmeridgian,Early Tithonian,157.3,145,46663,gp_mid,-41.56,13.35,101
+1134415,occ,37873,NA,144398,n. gen. Nannopterygius n. sp. enthekiodon,species,170909,NA,Nannopterygius enthekiodon,species,170909,Kimmeridgian,NA,157.3,152.1,75538,gp_mid,14.2,32.64,315
+1134416,occ,NA,NA,24521,Ichthyosauria indet.,unranked clade,36543,NA,Ichthyosauria,unranked clade,36543,Tithonian,NA,152.1,145,46676,gp_mid,23.28,32.05,305
+1135829,occ,NA,NA,119504,Ichthyosaurus n. sp. enthekiodon,species,268069,NA,Ichthyosaurus enthekiodon,species,268069,Late Kimmeridgian,NA,155.7,150.8,46826,gp_mid,13.55,32.46,315
+1135958,occ,NA,NA,53967,Ichthyosaurus trigonus,species,171432,nomen dubium,Ichthyosaurus,genus,36558,Tithonian,NA,152.1,145,46850,gp_mid,15.84,32.81,315
+1136043,occ,NA,NA,144756,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Late Callovian,NA,164.7,161.2,46850,gp_mid,20.44,34.32,315
+1160925,occ,NA,NA,149244,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Middle Callovian,NA,164.7,161.2,47746,gp_mid,18.58,35.99,315
+1161078,occ,NA,NA,149253,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Middle Callovian,NA,164.7,161.2,47746,gp_mid,18.52,35.94,315
+1197008,occ,NA,NA,48856,Ichthyosauria indet.,unranked clade,267386,NA,Ichthyosauria,unranked clade,36543,Early Kimmeridgian,NA,155.7,150.8,50391,gp_mid,15.4,31.57,305
+1220159,occ,NA,NA,159583,n. gen. Janusaurus n. sp. lundi,species,301635,recombined as,Arthropterygius lundi,species,301635,Tithonian,NA,152.1,145,52129,gp_mid,13.37,60.82,309
+1236524,occ,NA,NA,162726,Undorosaurus n. sp. trautscholdi,species,306807,NA,Undorosaurus trautscholdi,species,306807,Late Tithonian,NA,150.8,145,52983,gp_mid,40.88,43.11,302
+1263914,occ,37814,NA,167891,Arthropterygius lundi,species,432089,NA,Arthropterygius lundi,species,301635,Tithonian,NA,152.1,145,75187,gp_mid,45.92,54.01,302
+1263915,occ,NA,NA,167892,Ophthalmosaurus sp.,genus,36566,NA,Ophthalmosaurus,genus,36566,Late Tithonian,Berriasian,150.8,139.8,54879,gp_mid,42.89,54.85,302
+1289504,occ,NA,NA,170680,Ichthyosaurus quenstedti,species,385745,nomen dubium,Ichthyosaurus,genus,36558,Early Callovian,NA,164.7,161.2,55912,gp_mid,-24.67,-27.65,201
+1289527,occ,NA,NA,172173,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Early Callovian,NA,164.7,161.2,55912,gp_mid,-24.67,-27.65,201
+1289547,occ,NA,NA,172174,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Late Callovian,NA,164.7,161.2,55912,gp_mid,-24.67,-27.65,201
+1289572,occ,NA,NA,172175,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Oxfordian,NA,163.5,157.3,55912,gp_mid,-25.15,-29.1,201
+1289580,occ,NA,NA,172176,Ichthyosaurus sp.,genus,36558,NA,Ichthyosaurus,genus,36558,Kimmeridgian,NA,157.3,152.1,55912,gp_mid,-25.85,-30.86,201
+1419312,occ,NA,NA,196747,n. gen. Gengasaurus n. sp. nicosiai,species,377498,NA,Gengasaurus nicosiai,species,377498,Kimmeridgian,Tithonian,157.3,145,66993,gp_mid,30.92,17.74,307
+1438003,occ,NA,NA,200649,Ophthalmosauridae indet.,family,170908,NA,Ophthalmosauridae,family,170908,Early Tithonian,NA,150.8,145,68558,gp_mid,-25.79,-43.16,291
+1438005,occ,NA,NA,200650,Ichthyosauria indet.,unranked clade,389359,NA,Ichthyosauria,unranked clade,36543,Early Tithonian,NA,150.8,145,68558,gp_mid,-25.79,-43.16,291
+1492004,occ,NA,NA,207509,n. gen. Acuetzpalin n. sp. carranzai,species,404054,NA,Acuetzpalin carranzai,species,404054,Kimmeridgian,NA,157.3,152.1,71507,gp_mid,-41.79,11.63,104
+1492005,occ,NA,NA,207510,Arthropterygius n. sp. thalassonotus,species,404056,NA,Arthropterygius thalassonotus,species,404056,Tithonian,NA,152.1,145,71508,gp_mid,-24.71,-47.65,291
+1539767,occ,NA,NA,216435,n. gen. Cryopterygius n. sp. kielanae,species,376868,NA,Cryopterygius kielanae,species,376868,Early Tithonian,NA,150.8,145,66851,gp_mid,NA,NA,coordinates not computable using this model
+1539771,occ,NA,NA,216435,Ichthyosauria indet.,unranked clade,267386,NA,Ichthyosauria,unranked clade,36543,Early Tithonian,NA,150.8,145,62841,gp_mid,NA,NA,coordinates not computable using this model
+1542337,occ,NA,NA,217015,Ichthyosaurus n. sp. volgensis,species,385749,recombined as,Arthropterygius volgensis,species,385749,Early Tithonian,NA,150.8,145,75187,gp_mid,NA,NA,coordinates not computable using this model
+1545281,occ,NA,NA,217469,Yasykovia n. sp. kabanovi,species,381687,subjective synonym of,Nannopterygius saveljeviensis,species,170912,Tithonian,NA,152.1,145,75538,gp_mid,NA,NA,coordinates not computable using this model
+1545282,occ,NA,NA,217470,Otschevia n. sp. alekseevi,species,433165,recombined as,Grendelius alekseevi,species,263107,Tithonian,NA,152.1,145,75539,gp_mid,NA,NA,coordinates not computable using this model
