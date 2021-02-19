@@ -1,0 +1,9 @@
+install.packages(
+  "broom",
+  "ggthemes",
+  "mapproj",
+  "renv",
+  "rgdal",
+  "rmarkdown",
+  "tidyverse"
+)
