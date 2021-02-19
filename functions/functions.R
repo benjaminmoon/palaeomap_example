@@ -20,7 +20,12 @@ palaeogeog_map_niceties <-
         colour = 1, fill = NA, size = 0.3
       ),
       scale_discrete_manual(
-        values = map_layers,
+        values =
+          c(
+            "Land"           = "#FFD23A",
+            "Mountain"       = "#FF8D51",
+            "Shallow marine" = "#45D8FF"
+          ),
         aesthetics = c("colour", "fill"),
         name = "Palaeogeography"
       ),

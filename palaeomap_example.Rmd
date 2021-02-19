@@ -4,6 +4,7 @@ author: Ben M
 # - name: Ben Moon
   # affiliation: Palaeobiology Research Group, School of Earth Sciences, University of Bristol, Bristol, U.K.
   # email: benjamin.moon@bristol.ac.uk
+date: 2021-02-18
 fig_caption: true
 output: beamer_presentation
 ---
@@ -84,7 +85,7 @@ ggplot() +
 ```
 
 
-# True Palaeogeographical Outlines
+# 'True' Palaeogeographical Outlines
 
 GPlates web service gives:
 
@@ -106,7 +107,7 @@ map_layers <-
   )
 ```
 
-***
+# Method
 
 1. Load data into GPlates
 2. Export for desired
@@ -139,7 +140,7 @@ work easily with `geom_map`.
 ggplot() +
   geom_map() +
   geom_map() +
-  geom_map() …
+  geom_map() + …
 ```
 
 ***
@@ -151,8 +152,7 @@ NB:
 
 - The data has 'groups' and 'subgroups' to close off the polygons, otherwise
   shapes may cross the whole globe.
-- Some difficultly with the plotting order means arranging the plotting order in
-  be marine > land > mountain > ice – use factors.
+- Layers must be plot in order be marine > land > mountain > ice – use factors.
 
 ```{r rearrange_polygon_labels, include = FALSE}
 id_level_order <-
