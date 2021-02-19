@@ -1,4 +1,4 @@
-install.packages(
+install.packages(c(
   "broom",
   "ggthemes",
   "mapproj",
@@ -6,4 +6,4 @@ install.packages(
   "rgdal",
   "rmarkdown",
   "tidyverse"
-)
+))
