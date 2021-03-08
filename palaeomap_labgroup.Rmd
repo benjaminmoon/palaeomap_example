@@ -9,58 +9,57 @@ fig_caption: true
 output:
   html_document:
     toc: true
+    toc_float: true
+    number_sections: true
+    df_print: paged
+    code_folding: hide
+    # self_contained: false
+    # keep_md: true
   # pdf_document:
   #   keep_tex: true
+bibliography: bibliography.yaml
 ---
 
-* [ ] Describe map plotting and polygons
-* [ ] Separate function files
+* [X] Describe map plotting and polygons
+* [X] Separate function files
+* [X] Add GitHub link
 * [ ] Add exercises
-  - [ ] look at OGR data
-  - [ ] reconstruct other map and occurrences
+  - [X] look at OGR data
+  - [X] reconstruct other map
+  - [ ] add other occurrences
   - [ ] separate latitude with colours
   - [ ] add exercise answers
+* [ ] Add RStudio images to introduction
+* [ ] GPlates export images
 * [ ] Revise to second person
 * [ ] Proofread
 
 
 # Introduction #
 
-This guides takes you through two different methods to create palaeogeographical
-maps and plot occurrences from pretty much any database. 
+This guides takes you through two different work flows to create palaeogeographical maps and plot occurrences fossil taxa. All the code and data are in this GitHub repository: <https://github.com/benjaminmoon/palaeomap_example>
 
-You can run this code directly on your machine, or follow along at Binder where
-I've created an environment to run with all of the data you need. Click the link
-below to open this in your web browser.
+You can run this code directly on your machine, or follow along online at Binder where I've created an environment to run with all of the data you need. Click the link below to open this in your web browser.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminmoon/palaeomap_example/HEAD?urlpath=rstudio)
 
-The Binder link will open in RStudio in your browser. Open the file
-`palaeomap_labgroup.Rmd` from the file browser to get started.
+The Binder link will open in your browser in the RStudio interface. Open the file `palaeomap_labgroup.Rmd` from the file browser to get started.
 
 
-# Palaeogeographical Maps
+# Palaeogeographical Maps #
 
-Maps are essential when discussing occurrences of taxa, both in the present and
-the past. Chuck in the issues associated with continental drift, and it can be
-difficult to resolve the wider context of some fossil occurrences. These marine
-fossils are found at the top of a mountain, but where were the oceans 150
-million years ago? Here are a couple of examples of papers discussing Jurassic
-marine reptiles.
+## Introduction ##
+
+
+Maps are essential when discussing occurrences of taxa, both in the present and the past. Chuck in the issues associated with continental drift, and it can be difficult to place the wider context of some fossil occurrences. 'These marine fossils are found at the top of a mountain, but where were the oceans 150 million years ago?' Here are a couple of recent examples discussing the spread of occurrences, in this case Jurassic marine reptiles.
 
 ![As a first example, @Gao2019JP discuss the occurrences of Jurassic plesiosaurs in China.](./figs/Gao_etal_2019_Jurassic_plesiosaurs_China.png)
 
 ![Here, @Zverkov2020GM show occurrences of ichthyosaurs in the Early Jurassic.](./figs/Zverkov_etal_2020_Jurassic_polar_marine_reptiles.png)
 
-Reconstructing global palaeogeography has been an ongoing task for many decades,
-and both local and global reconstructions and compendia have been made [e.g. @Bradshaw1992GSLM]. But the
-case of making maps to show many occurrences, plotting these by hand can be
-difficult and time-consuming.
+Reconstructing global palaeogeography has been an ongoing task for many decades, and both local and global reconstructions and compendia have been made [e.g. @Bradshaw1992GSLM]. But the case of making maps to show many occurrences by hand can be difficult and time-consuming.
 
-A few examples of groups that have made efforts to create palaeogeographical
-maps at various points through the Phanerozoic include Ron Blakey at _Deep Time
-Maps_ (<https://deeptimemaps.com>) and Christopher Scotese leading the _Paleomap
-Project_ (<http://scotese.com>).
+A few examples of groups that have made efforts to create palaeogeographical maps at various points through the Phanerozoic include Ron Blakey at _Deep Time Maps_ (<https://deeptimemaps.com>) and Christopher Scotese leading the _Paleomap Project_ (<http://scotese.com>).
 
 <iframe src="https://player.vimeo.com/video/315907106?title=0&byline=0&portrait=0" width="640" height="320" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/315907106">DeepTimeMaps_Animation_Mollweide_Sample</a> from <a href="https://vimeo.com/42degreesnorth">42 Degrees North Media</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
@@ -71,46 +70,37 @@ Maps._](https://deeptimemaps.com/wp-content/uploads/2018/07/150-Ma-Moll-_Jur-GPT
 
 ![Palaeogeography of the Late Jurassic, as reconstructed at _Palaeomap Project._](http://www.scotese.com/images/152.jpg)
 
-While built from models of plate tectonics and continental drift, these are
-nonetheless individual time points in a continuous series.
+While built from models of plate tectonics and continental drift, these are nonetheless individual time points in a continuous series and open to some interpretation.
 
 ## GPlates ##
 
-GPlates (<https://www.gplates.org>) is free software that reconstructs the
-movement of tectonic plates through geological history. Using models of plate
-movement, the configuration can be reconstructed at arbitrary points in the
-past. Onto this, the palaeoenvironments of the formations at their current
-positions can be overlain, and so the positions of landmasses, mountains,
-coastlines, and marine settings can be plotted long back in time.
+GPlates (<https://www.gplates.org>) is free software that reconstructs the movement of tectonic plates through geological history. Using models of plate movement, the configuration can be reconstructed at arbitrary points in the past. Onto this, the palaeoenvironments of the formations at their current positions can be overlain, and so the positions of landmasses, mountains, coastlines, and marine settings can be plotted long back in time.
 
-The download from GPlates provides lots of example data and projects to show the
-various plates, tectonics, plumes and other information that can be included.
-New data are being added as research is published. Try, for instance, the
-_DataBundleForNovices_ project (`GPlatesSampleData/DataBundleForNovices`) to see
-a combined model of modern continents and ocean spreading over the last 410
-million years.
+The download from GPlates provides lots of example data and projects to show the various plates, tectonics, plumes and other information that can be included. New data are being added as research is published. Try, for instance, the _DataBundleForNovices_ project (`GplatesSampleData/DataBundleForNovices`) to see a combined model of modern continents and ocean spreading over the last 410 million years.
 
-There is also a GPlates Web Service (<http://gws.gplates.org>) that can provide
-some of the same data without the software. I'll look briefly at this first.
+There is also a GPlates Web Service (GWS; <http://gws.gplates.org>) that can provide some of the same data without the software. I'll look briefly at this first.
+
+## Exercises 1 ##
+
+1. Find an example of a palaeogeographical map for your favourite time period.
+2. Have a look in the folder `GplatesSampleData` to see what other projects are included. 
 
 
 # Automatic map plotting in R #
 
-A couple of packages already exist for using GPlates reconstructions to create
-palaeogeographical maps in R:
+## Introduction ##
+
+
+A couple of packages already exist for using GPlates reconstructions to create palaeogeographical maps in R:
 
 * NonaR/paleoMap (<https://github.com/NonaR/paleoMap>)
   - NB Has not been updated in several years.
 * LunaSare/gplatesr (<https://github.com/LunaSare/gplatesr>)
   - More recently updated, and similar to above.
 
-Both of these download from the GWS API. I've borrowed some of their
-functions for this lab group.
+Both of these download from GWS. I've borrowed some of their functions for this lab group.
 
-If you're unfamiliar with RStudio or RMarkdown (`.Rmd` files), then the code
-sections are placed in 'chunks' like the one below. You can run individual lines
-by Cmd+Enter or Ctrl+Enter, or run the whole chunk using the little green arrow
-to the top right of each chunk. Try now if you want.
+If you're unfamiliar with RStudio or RMarkdown (`.Rmd` files), then the code sections are placed in 'chunks' like the one below. You can run individual lines by Cmd+Enter or Ctrl+Enter, or run the whole chunk using the little green arrow to the top right of each chunk. Try with this chunk below if you want.
 
 ```{r setup}
 library(broom)
@@ -126,31 +116,26 @@ library(stringr)
 library(tibble)
 # library(tidyverse) # a quick way to load packages, but slow for Binder.
 
-source("functions/functions.R")
+list.files("functions/", pattern = "\\.R", full.names = TRUE) %>%
+  walk(source)
 ```
 
-**NB not all of the chunks below should be run as some of the code will take a
-long time or fail to execute on Binder.**
+**NB not all of the chunks below should be run on Binder as some of the code will take a long time or fail to execute.**
 
 ## GPlates Web Service ##
 
-The GPlates Web Service (GWS) can reconstruct the locations of points, coastlines,
-plates, paths, and features back into the past
-(<https://github.com/GPlates/gplates_web_service_doc/wiki>). It can also use a
-variety of different reconstructions. Most pertinent is perhaps the
-@Golonka2007G model, which is often used for palaeocoordinate reconstruction in
-the Palaeobiology Database.
+GWS can reconstruct the locations of points, coastlines, plates, paths, and features back into the past (<https://github.com/GPlates/gplates_web_service_doc/wiki>). It can also use a variety of different reconstructions. Most relevant is perhaps the @Golonka2007G model, which is often used for palaeocoordinate reconstruction in the Palaeobiology Database.
 
-The process is straightforward:
+The process is:
 
 1. Download outlines of the continental coastlines.
 2. Download outlines of the tectonic plates.
-3. Read and convert these into a format that R and _ggplot2_ can use.
-    - this uses the packages _rgdal, readr,_ and _broom._
-4. Plot.
+3. Read and convert these into a format that R and _ggplot2_ can use,
+  - this uses the packages _rgdal, readr,_ and _broom._
+4. Plot,
+  - in this case with _gpplot._
 
-**Example code only. Do not run this.** The code below does that by downloading
-the data, which will likely take a long time.
+**Example code only. Do not run.** The code below does these steps by downloading the data, which will likely take some time.
 
 ```{r gws_data, eval = FALSE}
 #### DO NOT RUN THIS CODE ####
@@ -167,13 +152,11 @@ kimmeridgian_polygons <-
     broom::tidy()
 ```
 
-This chunk below replicates the above using data I've already downloaded from
-GWS and stored in Binder/GitHub repository. It has the same steps of loading and
-tidying the data, then includes the commands to plot with _ggplot2._
+This chunk below replicates the above using data I've already downloaded from GWS and stored in the GitHub repository, and can be used on Binder. It has the same steps of loading and tidying the data, then includes the commands to plot with _ggplot2._
 
 **Feel free to run this code.**
 
-```{r gws_plot, fig.width = 7, fig.height = 4, fig.cap = "**Outlines of continental plates in the Kimmeridgian (155 Ma).** Data downloaded from the GPlates web service.", warning = FALSE, message = FALSE, results = "hide"}
+```{r gws_plot, fig.width = 7, fig.height = 4, fig.cap = "**Outlines of continental plates in the Kimmeridgian (155 Ma).** Plates in the continental model are shaded grey, while the modern coastlines are outlined. Data downloaded from the GPlates web service.", warning = FALSE, message = FALSE, results = "hide"}
 # Load and tidy the data 
 kimmeridgian_coastlines <-
   readOGR(
@@ -186,7 +169,6 @@ kimmeridgian_polygons <-
   ) %>%
   tidy()
 
-# Plot with ggplot
 ggplot() +
   geom_map(
     data = kimmeridgian_polygons,
@@ -205,21 +187,17 @@ ggplot() +
   theme_map()
 ```
 
-When plotting with _ggplot2,_ the different data has to be added at layers, each
-plotting over the other: plate polygons at the bottom then coastlines on top.
-I've also set the map projection to be
-[Mollweide](https://en.wikipedia.org/wiki/Mollweide_projection), but you can
-play with this and change it to others included in the _mapproj_ package
-function [`mapproject`](https://rdrr.io/cran/mapproj/man/mapproject.html).
-Options include `"Gilbert"`, `"fisheye"`, and `"hex"`. (Use, for example,
-`coord_map("fisheye", n = 0.7)` to add extra arguments.)
+When plotting, the data are added as layers, each plotting over the other: plate polygons at the bottom then coastlines on top. I've also set the map projection to be [Mollweide](https://en.wikipedia.org/wiki/Mollweide_projection), but you can play with this and change it to others included in the _mapproj_ package function [`mapproject`](https://rdrr.io/cran/mapproj/man/mapproject.html). Options include `"Gilbert"`, `"fisheye"`, and `"hex"`. (Use, for example, `coord_map("fisheye", n = 0.7)` to add extra arguments.)
 
-Additionally I've added a border (`map_border`) and used a basic theme
-(`these_map`) to get rid of any usual _ggplot2_ extras.
+Additionally I've added a border (`map_border()`, in the `functions` folder) and used a basic theme (`theme_map()`) to get a plain background.
+
+## How R plots these map data ##
+
+The positions and extent of map areas from data in GPlates are stored as a series of _polygons._ Each region is outlined by a series of points that form a closed shape, filled with a particular colour. This is exported from GPlates as OGR format, which lists each point that marks the corner of a polygon. In R, _broom_ converts this to a tibble (similar to a data.frame) that has the _x_ and _y_ locations of each point, and a series of columns that identify which polygon that point belongs to. These ID columns are important to make sure that polygons contain the correct points and are closed properly. Without these, there would only be a single shape that would stretch across the whole globe and not make much sense.
 
 ## Not quite right ##
 
-G'S is convenient for data and access, but the results in the plot above show
+GWS is convenient for data and access, but the results in the plot above show
 the current continental coastlines and the plates. This does not reflect the
 ancient coastlines that were really after. Also, many of the countries are
 cross-cut by the polygons that form the sections in the model, which are untidy
@@ -228,67 +206,59 @@ and typically not visible.
 We need to go to the next level: _true palaeogeographical reconstructions._
 Fortunately GPlates offers that too.
 
+## Exercises 2 ##
 
-# 'True' Palaeogeographical Outlines
+1. Have a look at the [GWS documentation](<https://github.com/GPlates/gplates_web_service_doc/wiki>). What address would you use to get reconstructed coastlines in the early Carboniferous using the @Matthews2016GPC model?
+2. Open an example of the OGR-GMT data from the GWS, either from the `data/GWS` folder or by downloading it. Can you see how the polygons are stored? How are different polygons identified?
+3. Now look at the tidied version in R, i.e. `kimmeridgian_coastlines` or `kimmeridgian_polygons`. By default this will only show the first 10 rows, but you can see more with, for example, `head(kimmeridgian_polygons, n = 50L)`. Can you see how the OGR-GMT data is transferred to this tidy format?
+4. Play around with the inputs to the plot above. How messy or colourful can you make this map? What options are there in `theme_map()`? (Hint: use `?theme_map` to see.)
 
-Among the models included with the GPlates download is the reconstructions by
-@Cao2017Bb for the last 402 my. These are based, and so should align nicely,
-with the @Golonka2007G model and the data in the PBDB, which we'll get to
-shortly. This is available as a project in the GPlates software
-(`GPlatesSampleData/FeatureCollections/Palaeogeography/Global/`) that you can
-look.
 
-This model reconstructs four layers based on palaeoenvironmental data from the
-PBDB, updating previous versions:
+# 'True' Palaeogeographical Outlines #
+
+## Introduction ##
+
+
+Among the projects included with the GPlates download is the set of palaeogeographical reconstructions by @Cao2017Bb for the last 402 my. These are based, and so should align nicely, with the @Golonka2007G model that is used for data in the Palaeobiology Database, which we'll get to below. These data are in `GPlatesSampleData/FeatureCollections/Palaeogeography/Global/`.
+
+@Cao2017Bb used a combination of previous palaeogeographical reconstructions, and updated the coastlines, mountains, and extent of land and ice caps using occurrence data from the Palaeobiology Database. In a few locations, what had been reconstructed as land produced marine fossils, when accounting for the movement of plates, and vice versa.
+
+These reconstructions include four layers that have the separated palaeoevonvironmental regions:
 
 * Shallow marine: shelf seas.
 * Land: terrestrial habitats outlined by coastlines.
 * Mountain: areas of mountain building and uplift.
-* Ice cap: polar regions that have substantial evidence for ice.
+* Ice cap: polar regions that have substantial evidence for long term presence of ice.
 
-These are given the abbreviations 'sm', 'l', 'm' and 'i'. It's worth noting that
-the way these are built means that the layers have to be plotted in the order
-above – shallow marine first, ice cap last. There are various areas that overlap
-(Australia especially) so the order of overlay becomes important in getting the
-correct boundaries.
+These are given the abbreviations 'sm', 'l', 'm' and 'i'. It's worth noting that the way these are built means that the layers have to be plotted in the order above – shallow marine first, ice cap last. There are various areas that overlap (Australia especially) so the order of overlay becomes important in making the correct boundaries visible.
 
 ## Export from GPlates ##
 
-The @Cao2017Bb models aren't available from GWS, but can be exported from
-GPlates directly using the menu item _Reconstruction > Export…_ Like above I've
-already done this for an example data set, in this case using the Late Jurassic
-(Kimmeridgian, 155 Ma) as an example. To make your own, once in the export
-window:
+The @Cao2017Bb reconstructions aren't available from GWS, but can be exported from GPlates directly using the menu item _Reconstruction > Export…_ Like above I've already done this for an example data set, in this case using the Late Jurassic (Kimmeridgian, 155 Ma) as an example. To make your own, once in the export window:
 
 1. Select the time of export (can  be set from the main window time).
     - Also an option to export a series at regular intervals.
 2. The layers to export
     1. select _Add Export…_ under Export Data
-    2. Choose _Reconstructed Geometries_
-    3. Output as _OGR-GMT_
+    2. choose _Reconstructed Geometries_
+    3. output as _OGR-GMT_
     4. choose single or multiple files
-        + I prefer multiple: you get one file for each of sea/land/mountain/ice.
+        + I prefer multiple: you get one file for each of sea/land/mountain/ice. This is the form that works with the code below.
     5. _OK_
 3. Change _Target directory:_ to somewhere you can find.
 3. _Begin Export_
 
-The example data can be found in `data/palaeogeography` as three `.gmt` files that
-describe the polygon outlines for each of the layers. Note that as there are no
-ice caps at this time, there are only three files/layers.
+The example data are in `data/palaeogeography` as three `.gmt` files that describe the polygon outlines for each of the layers. Note that as there are no ice caps at this time, there are only three files/layers. Look at the Carboniferous of later Palaeogene to get some ice caps.
 
 ## Read in the map data ##
 
-I find it useful to tie together the layers and colours from the beginning of
-importing – this ensures keeping the layers in the order for plotting.
-The data files are:
+I find it useful to tie together the layers and colours from the beginning of importing – this ensures keeping the layers in the order for plotting. The data files are:
 
 * `lm_402_2_reconstructed_155.00Ma.gmt`: landmass
 * `m_402_2_reconstructed_155.00Ma.gmt`: mountain
 * `sm_402_2_reconstructed_155.00Ma.gmt`: shallow marine
 
-This short code snippet sets the colours that I want to use – they are similar
-to those shown in GPlates, but not quite the same. I've also used `#DAD3FF` for
-ice caps when needed, which come after mountain.
+This short code snippet sets lists the layer names and assigns the colours for each layer on the map – they are similar to those shown in GPlates, but not quite the same. I've also used `#DAD3FF` for ice caps when needed. (Technically this isn't used for the colours, that's in the `palaeogeog_map_niceties` function, this is somewhat a remnant of a previous way that I made this.)
 
 ```{r map_layers}
 map_layers <-
@@ -299,21 +269,9 @@ map_layers <-
   )
 ```
 
-With that ready, the following code reads and tidies the data (as for above),
-then adds a column (geog_layer) to identify the data layer (shallow marine, land, mountain)
-and joins all the data together. It's very _tidyverse_ based, so I'd suggest
-looking at <https://www.tidyverse.org> to see the rationale and how they link.
-You can also see more about individual functions in the R help.
+With that ready, the following code reads and tidies the data (as for above), then adds a column (geog_layer) to identify the data layer (shallow marine, land, mountain) and joins all the data together. It's very _tidyverse_ based, so I'd suggest looking at <https://www.tidyverse.org> to see the rationale and how they link using the _pipe_ (`%>%`). You can also see more about individual functions in the R help.
 
-The final step is to create a column (polygon_id) to identify each region on the
-map. I had a long issue where different continents would join up, or Australia's
-land would always appear plotted underneath the sea.
-
-This is because the various shapes on the map are plotted as outlines that need
-to be linked and closed separately. Joining the data for the three layers
-creates duplicate ids so that these different shapes become erroneously joined.
-Adding a new column that combines the id for each shape and the layer corrects
-this.
+The final step is to create a column (polygon_id) to identify each region on the, which come after mountain map. I had a long issue where different continents would join up, or Australia's land would always appear plotted underneath the sea. As described above, this is because the shapes on the map are plotted as separate polygons, and the IDs are repeated between each of the layers. We'll use the polygon_id column to make sure that each polygon has a unique ID by joining the layer, group and id name from the tidied data.
 
 ```{r read_polygon_data}
 polygon_data <-
@@ -333,11 +291,9 @@ polygon_data <-
 
 ## Arranging the map layers ##
 
-At this point it's important to have the map layers in the correct order, so
-that marine is plotted under land, which is plotted under mountain.
+At this point it's important to have the map layers in the correct order, so that marine is plotted under land, which is plotted under mountain.
 
-This piece of code does that for you, ensuring shallow marine is first (it was
-third in `map_layers` above) then assigning this order to the polygon_id column.
+This piece of code does that for you, ensuring shallow marine is first (it was third in `map_layers` above) then assigning this order to the polygon_id column. It converts the polygon_id column to a factor and re-orders thee levels based on the reordered `map_layers`.
 
 ```{r rearrange_polygon_labels}
 id_level_order <-
@@ -356,9 +312,7 @@ polygon_data <-
 
 ## Plotting the map ##
 
-Unfortunately, using the same plot layer method as for the GWS data above is a
-little excessive. I tried to add a new annotation for each layer, which then
-multiplied when plotting reconstructions of many times.
+Unfortunately, using the same plot layer method as for the GWS data above is a little excessive. You would have to add a new annotation for each layer (just about okay for three, tedious for more), which then multiplies when plotting reconstructions of many times.
 
 ```{r many_annotations, eval = FALSE}
 # DO NOT RUN THIS CODE
@@ -368,24 +322,11 @@ ggplot() +
   geom_map() + …
 ```
 
-Instead, you can use the function `geom_polygon` and have the different layers
-plotted automatically with the colours assigned above. The _fill_ is the most
-important as that assigns the main bulk of the colour. The _colour_ argument is
-the outline, which I include to 'smooth' the continental outlines a little (with
-a thin line) – you may wish to remove this. Also having the ordered and correctly grouped _polygon_id_ is
-important here as that determines how the individual polygons are grouped and
-closed, preventing shapes from spanning the globe.
+Instead, you can use the function `geom_polygon` and have the different layers plotted automatically with the colours assigned above. The _fill_ is the most important argument as that assigns the main bulk of the colour. The _colour_ argument is the outline, which I include to 'smooth' the continental outlines a little (with a thin line) – you may wish to remove this. Also having the ordered and correctly grouped _polygon_id_ is important here as that determines how the individual polygons are grouped and closed, preventing shapes from spanning the globe, or incorrectly overlapping.
 
-I'll point out here that there's quite a lot going on in the
-`palaeogeog_map_niceties` function at the end. This is a collection of theme
-options and colour scale to show the map properly. In particular this adds the
-outline and the lines of the equator and tropics. I guess one thing to note is
-that the 'tropics', in a biodiversity sense, may not be the same in the past as
-the present. Increased temperatures can change the latitudinal biodiversity
-gradient. Also, obliquity and precession change the latitudes of the
-astronomical tropics through time.
+I'll point out here that there's quite a lot going on in the `palaeogeog_map_niceties` function at the end. This is a collection of theme options and a colour scale to show the map properly. In particular this adds the outline and the lines of the equator and tropics. I guess one thing to note is that the 'tropics', in a biodiversity sense, may not be the same in the past as the present. Increased temperatures can change the latitudinal biodiversity gradient. Also, obliquity and precession change the latitudes of the astronomical tropics through time.
 
-```{r plot_base_map, fig.width = 7, fig.height = 4, fig.cap = "**Palaeogeography in the Kimmeridgian (155 Ma).**", echo = FALSE}
+```{r plot_base_map, fig.width = 7, fig.height = 4, fig.cap = "**Palaeogeography in the Kimmeridgian (155 Ma).** Palaeogeographical reconstruction from @Cao2017Bb. Lines of latitude indicate the locations of the Equator and Tropics (±23.5°)."}
 # dev.new(width = 7, height = 4)
 map_plot <-
   ggplot() +
@@ -405,26 +346,13 @@ map_plot <-
 map_plot
 ```
 
-You can try changing the look by modifying the projection (`coord_map`) and play
-about with some of the colours and markings by editing the function
-`palaeogeog_map_niceties` (`functions/palaeogeog_map_niceties.R`). You can also
-add further annotations
-(<https://ggplot2-book.org/annotations.html#annotations>) or change labels as
-you wish.
+You can try changing the look by modifying the projection (`coord_map`) and play about with some of the colours and markings by editing the function `palaeogeog_map_niceties` (`functions/palaeogeog_map_niceties.R`). You can also add further annotations (<https://ggplot2-book.org/annotations.html#annotations>) or change labels as you wish.
 
 ## Going further 1: locating with modern coastlines ##
 
-I have also added outlines of modern coastlines to show where these are and
-help orientation. Again these are not available from GWS, but can be exported
-from GPlates. In GPlates, from _File > Open Feature Collection…_ go to
-`GplatesSampleData/FeatureCollections/Coastlines` and load
-`Matthews_etal_GPC_2016_Coastlines_Polyline.gpmlz`. This adds a new layer into
-GPlates with areas of modern coastline in their relative positions for the time.
-Not all the modern coastlines are there as not all of these have certain
-locations, or rock to be found at – these come and go at different time points.
+You may also want to add outlines of modern coastlines to show where these are and help locating. Again these are not available from GWS, but can be exported from GPlates. In GPlates, from _File > Open Feature Collection…_ go to `GplatesSampleData/FeatureCollections/Coastlines` and load `Matthews_etal_GPC_2016_Coastlines_Polyline.gpmlz`. This adds a new layer into GPlates with areas of modern coastline in their relative positions for the time. Not all the modern coastlines are there as not all of these have certain locations, or rock to be found at – these come and go at different time points.
 
-Like above, you can export this layer from GPlates. In this repo ,I've already
-done that to `data/coastlines/`, which can be loaded as below.
+Like above, you can export this layer from GPlates. In this repo, I've already done that to `data/coastlines/`, which you can load with this code.
 
 ```{r read_coastline_polygons, results = "hide"}
 modern_coastlines <-
@@ -434,11 +362,9 @@ modern_coastlines <-
     mutate(polygon_id = str_c(id, group, geog_layer) %>% as_factor())
 ```
 
-This layer needs the same organising as the palaeogeography above, but once done
-can be easily added to `map_plot` above. This is where it's useful to save your
-ggplot to an object alongside printing it.
+This layer needs the same organising of IDs as the palaeogeography above, but once done can be easily added to `map_plot` above. This is where it's useful to save your ggplot to an object alongside printing it – this you can just add new layers on top of the base map.
 
-```{r plot_coast_outlines, fig.width = 7, fig.height = 4, fig.cap = "**Palaeogeography in the Kimmeridgian (155 Ma).** Outlines of modern coastlines (where known) are included in grey."}
+```{r plot_coast_outlines, fig.width = 7, fig.height = 4, fig.cap = "**Palaeogeography in the Kimmeridgian (155 Ma).** Outlines of modern coastlines (where known) are included in grey. Palaeogeographical reconstruction from @Cao2017Bb. Lines of latitude indicate the locations of the Equator and Tropics (±23.5°)."}
 map_plot +
   geom_path(
     data = modern_coastlines,
@@ -451,13 +377,19 @@ map_plot +
   )
 ```
 
+## Exercises 3 ##
+
+1. Try plotting this map with different projections (see above and `?mapproject`). Does this work well for all prejections?Why might this not?
+2. Look at the code behind `palaeogeog_map_niceties()` (in `functions/palaeogeog_map_niceties.R`). Modify this to add different lines of latitude. Can you add lines of longitude too? What about changing the colour?
+  - _ggplot_ objects can have new layers added to them one-by-one by using `+`, but also combining them into function containing a list of layers that can be added in a single line.
+3. Can you try creating you own palaeogeographical map for your favourite time? This is best done on your own computer. Follow the instructions above to export data from GPlates then plot in R, making sure you change all the file and object names.
+
 
 # Adding Fossil Occurrences #
 
-Now that you've spent lots of time making a pretty map, let's plot some fossils
-on top of it.
-
 ## Getting occurrence data ##
+
+Now that you've spent lots of time making a pretty map, let's plot some fossils on top of it.
 
 Of course, being me and having used Jurassic data, we're going to plot some
 ichthyosaurs. In this instance, the occurrence data comes from the PBDB,
