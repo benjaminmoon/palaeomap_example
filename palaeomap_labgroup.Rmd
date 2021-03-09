@@ -1,5 +1,5 @@
 ---
-title: "Plotting Palaeogeographical Maps in R: an Example"
+title: "Plotting Palaeogeographical Maps in R: a Lab Group"
 author: #Ben Moon
   - name: Ben Moon
     affiliation: Palaeobiology Research Group, School of Earth Sciences, University of Bristol, Bristol, U.K.
@@ -7,12 +7,12 @@ author: #Ben Moon
 date: "`r format(Sys.time(), '%d %B %Y')`"
 fig_caption: true
 output:
-  html_document:
+  html_notebook:
     toc: true
     toc_float: true
     number_sections: true
     df_print: paged
-    code_folding: hide
+    code_folding: show 
     # self_contained: false
     # keep_md: true
   # pdf_document:
@@ -23,15 +23,15 @@ bibliography: bibliography.yaml
 * [X] Describe map plotting and polygons
 * [X] Separate function files
 * [X] Add GitHub link
-* [ ] Add exercises
+* [X] Add exercises
   - [X] look at OGR data
   - [X] reconstruct other map
-  - [ ] add other occurrences
-  - [ ] separate latitude with colours
-  - [ ] add exercise answers
-* [ ] Add RStudio images to introduction
-* [ ] GPlates export images
-* [ ] Revise to second person
+  - [X] add other occurrences
+  - [X] separate latitude with colours
+  - [X] add exercise answers
+* [X] Add RStudio images to introduction
+* [X] GPlates export images
+* [X] Revise to second person
 * [ ] Proofread
 
 
@@ -45,17 +45,16 @@ You can run this code directly on your machine, or follow along online at Binder
 
 The Binder link will open in your browser in the RStudio interface. Open the file `palaeomap_labgroup.Rmd` from the file browser to get started.
 
+![The RStudio interface similar to that you should see in Binder. Open the file `palaeomap_labgroup.nb.html` to get started.](./figs/rstudio_window.png)
+
 
 # Palaeogeographical Maps #
 
-## Introduction ##
-
-
 Maps are essential when discussing occurrences of taxa, both in the present and the past. Chuck in the issues associated with continental drift, and it can be difficult to place the wider context of some fossil occurrences. 'These marine fossils are found at the top of a mountain, but where were the oceans 150 million years ago?' Here are a couple of recent examples discussing the spread of occurrences, in this case Jurassic marine reptiles.
 
-![As a first example, @Gao2019JP discuss the occurrences of Jurassic plesiosaurs in China.](./figs/Gao_etal_2019_Jurassic_plesiosaurs_China.png)
+![As a first example, @Gao2019JP discuss the occurrences of Jurassic plesiosaurs in China.](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs42501-019-0043-5/MediaObjects/42501_2019_43_Fig4_HTML.png)
 
-![Here, @Zverkov2020GM show occurrences of ichthyosaurs in the Early Jurassic.](./figs/Zverkov_etal_2020_Jurassic_polar_marine_reptiles.png)
+![Here, @Zverkov2020GM show occurrences of ichthyosaurs in the Early Jurassic.](https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20201223091456984-0252:S0016756820001351:S0016756820001351_fig1.png)
 
 Reconstructing global palaeogeography has been an ongoing task for many decades, and both local and global reconstructions and compendia have been made [e.g. @Bradshaw1992GSLM]. But the case of making maps to show many occurrences by hand can be difficult and time-consuming.
 
@@ -78,6 +77,10 @@ GPlates (<https://www.gplates.org>) is free software that reconstructs the movem
 
 The download from GPlates provides lots of example data and projects to show the various plates, tectonics, plumes and other information that can be included. New data are being added as research is published. Try, for instance, the _DataBundleForNovices_ project (`GplatesSampleData/DataBundleForNovices`) to see a combined model of modern continents and ocean spreading over the last 410 million years.
 
+![The main GPlates window showing the DataBundleForNovices loaded.](./figs/gplates_window.png)
+
+![Layers can be selected in this Gplates window to show and hide different features.](./figs/gplates_layers.png)
+
 There is also a GPlates Web Service (GWS; <http://gws.gplates.org>) that can provide some of the same data without the software. I'll look briefly at this first.
 
 ## Exercises 1 ##
@@ -87,9 +90,6 @@ There is also a GPlates Web Service (GWS; <http://gws.gplates.org>) that can pro
 
 
 # Automatic map plotting in R #
-
-## Introduction ##
-
 
 A couple of packages already exist for using GPlates reconstructions to create palaeogeographical maps in R:
 
@@ -124,7 +124,7 @@ list.files("functions/", pattern = "\\.R", full.names = TRUE) %>%
 
 ## GPlates Web Service ##
 
-GWS can reconstruct the locations of points, coastlines, plates, paths, and features back into the past (<https://github.com/GPlates/gplates_web_service_doc/wiki>). It can also use a variety of different reconstructions. Most relevant is perhaps the @Golonka2007G model, which is often used for palaeocoordinate reconstruction in the Palaeobiology Database.
+GWS can reconstruct the locations of points, coastlines, plates, paths, and features back into the past (<https://github.com/GPlates/gplates_web_service_doc/wiki>). It can also use a variety of different reconstructions. Most relevant is perhaps the @Golonka2007G model, which is often used for palaeocoordinate reconstruction in the Palaeobiology Database (PBDB).
 
 The process is:
 
@@ -193,18 +193,13 @@ Additionally I've added a border (`map_border()`, in the `functions` folder) and
 
 ## How R plots these map data ##
 
-The positions and extent of map areas from data in GPlates are stored as a series of _polygons._ Each region is outlined by a series of points that form a closed shape, filled with a particular colour. This is exported from GPlates as OGR format, which lists each point that marks the corner of a polygon. In R, _broom_ converts this to a tibble (similar to a data.frame) that has the _x_ and _y_ locations of each point, and a series of columns that identify which polygon that point belongs to. These ID columns are important to make sure that polygons contain the correct points and are closed properly. Without these, there would only be a single shape that would stretch across the whole globe and not make much sense.
+The positions and extent of map areas from data in GPlates are stored as a series of _polygons._ Each region is outlined by a series of points that form a closed shape, filled with a particular colour. This is exported from GPlates as OGR-GMT format, with file extension `.gmt`, which lists each point that marks the corner of a polygon. In R, _broom_ converts this to a tibble (similar to a data.frame) that has the _x_ and _y_ locations of each point, and a series of columns that identify which polygon that point belongs to. These ID columns are important to make sure that polygons contain the correct points and are closed properly. Without these, there would only be a single shape that would stretch across the whole globe and not make much sense.
 
 ## Not quite right ##
 
-GWS is convenient for data and access, but the results in the plot above show
-the current continental coastlines and the plates. This does not reflect the
-ancient coastlines that were really after. Also, many of the countries are
-cross-cut by the polygons that form the sections in the model, which are untidy
-and typically not visible.
+GWS is convenient for data and access, but the results in the plot above show the current continental coastlines and the plates. This does not reflect the ancient coastlines that were really after. Also, many of the countries are cross-cut by the polygons that form the sections in the model, which are untidy and typically not visible.
 
-We need to go to the next level: _true palaeogeographical reconstructions._
-Fortunately GPlates offers that too.
+We need to go to the next level: _true palaeogeographical reconstructions._ Fortunately GPlates offers that too.
 
 ## Exercises 2 ##
 
@@ -216,12 +211,9 @@ Fortunately GPlates offers that too.
 
 # 'True' Palaeogeographical Outlines #
 
-## Introduction ##
+Among the projects included with the GPlates download is the set of palaeogeographical reconstructions by @Cao2017Bb for the last 402 my. These are based, and so should align nicely, with the @Golonka2007G model that is used for data in the PBDB, which we'll get to below. These data are in `GPlatesSampleData/FeatureCollections/Palaeogeography/Global/`.
 
-
-Among the projects included with the GPlates download is the set of palaeogeographical reconstructions by @Cao2017Bb for the last 402 my. These are based, and so should align nicely, with the @Golonka2007G model that is used for data in the Palaeobiology Database, which we'll get to below. These data are in `GPlatesSampleData/FeatureCollections/Palaeogeography/Global/`.
-
-@Cao2017Bb used a combination of previous palaeogeographical reconstructions, and updated the coastlines, mountains, and extent of land and ice caps using occurrence data from the Palaeobiology Database. In a few locations, what had been reconstructed as land produced marine fossils, when accounting for the movement of plates, and vice versa.
+@Cao2017Bb used a combination of previous palaeogeographical reconstructions, and updated the coastlines, mountains, and extent of land and ice caps using occurrence data from the PBDB. In a few locations, what had been reconstructed as land produced marine fossils, when accounting for the movement of plates, and vice versa.
 
 These reconstructions include four layers that have the separated palaeoevonvironmental regions:
 
@@ -247,6 +239,10 @@ The @Cao2017Bb reconstructions aren't available from GWS, but can be exported fr
     5. _OK_
 3. Change _Target directory:_ to somewhere you can find.
 3. _Begin Export_
+
+![Export options from GPlates.](./figs/gplates_export1.png)
+
+![Layer selection in GPlates export. Select Reconstructed geometries, OGR-GMT, and multiple layers.](./figs/gplates_export2.png)
 
 The example data are in `data/palaeogeography` as three `.gmt` files that describe the polygon outlines for each of the layers. Note that as there are no ice caps at this time, there are only three files/layers. Look at the Carboniferous of later Palaeogene to get some ice caps.
 
@@ -322,7 +318,7 @@ ggplot() +
   geom_map() + …
 ```
 
-Instead, you can use the function `geom_polygon` and have the different layers plotted automatically with the colours assigned above. The _fill_ is the most important argument as that assigns the main bulk of the colour. The _colour_ argument is the outline, which I include to 'smooth' the continental outlines a little (with a thin line) – you may wish to remove this. Also having the ordered and correctly grouped _polygon_id_ is important here as that determines how the individual polygons are grouped and closed, preventing shapes from spanning the globe, or incorrectly overlapping.
+Instead, you can use the function `geom_polygon` and have the different layers plotted automatically with the colours assigned above. The _fill_ is the most important argument as that assigns the main bulk of the colour. The _colour_ argument is the outline, which you shouldn't use bas that will outline the map layers and change their shape. The `colour` argument will be used when plotting occurrence points (see below). Also having the ordered and correctly grouped _polygon_id_ is important here as that determines how the individual polygons are grouped and closed, preventing shapes from spanning the globe, or incorrectly overlapping.
 
 I'll point out here that there's quite a lot going on in the `palaeogeog_map_niceties` function at the end. This is a collection of theme options and a colour scale to show the map properly. In particular this adds the outline and the lines of the equator and tropics. I guess one thing to note is that the 'tropics', in a biodiversity sense, may not be the same in the past as the present. Increased temperatures can change the latitudinal biodiversity gradient. Also, obliquity and precession change the latitudes of the astronomical tropics through time.
 
@@ -336,9 +332,9 @@ map_plot <-
         x      = long,
         y      = lat,
         fill   = geog_layer,
-        colour = geog_layer,
         group  = polygon_id
       ),
+      colour = NA
     ) +
     coord_map("mollweide") +
     theme_map() +
@@ -379,10 +375,11 @@ map_plot +
 
 ## Exercises 3 ##
 
-1. Try plotting this map with different projections (see above and `?mapproject`). Does this work well for all prejections?Why might this not?
+1. Try plotting this map with different projections (see above and `?mapproject`). Does this work well for all projections? Why?
 2. Look at the code behind `palaeogeog_map_niceties()` (in `functions/palaeogeog_map_niceties.R`). Modify this to add different lines of latitude. Can you add lines of longitude too? What about changing the colour?
-  - _ggplot_ objects can have new layers added to them one-by-one by using `+`, but also combining them into function containing a list of layers that can be added in a single line.
-3. Can you try creating you own palaeogeographical map for your favourite time? This is best done on your own computer. Follow the instructions above to export data from GPlates then plot in R, making sure you change all the file and object names.
+  - _ggplot_ objects can have new layers added to them one-by-one by using `+`, but you can also combine them into function containing a list of layers that can be added in a single line.
+  - Hint: to change the colour of the map layers, use `fill`.
+3. Can you try creating your own palaeogeographical map for your favourite time? This should be done on your own computer. Follow the instructions above to export data from GPlates then plot in R, making sure you change all the file and object names.
 
 
 # Adding Fossil Occurrences #
@@ -391,22 +388,17 @@ map_plot +
 
 Now that you've spent lots of time making a pretty map, let's plot some fossils on top of it.
 
-Of course, being me and having used Jurassic data, we're going to plot some
-ichthyosaurs. In this instance, the occurrence data comes from the PBDB,
-downloading ichthyosaur occurrences with these filters:
+Of course, being me and having used Jurassic data, we're going to plot some ichthyosaurs. In this instance, the occurrence data comes from the PBDB, downloading ichthyosaur occurrences with these filters:
 
 - Callovian–Tithonian (166-145 Ma)
 - all levels of taxonomy – no filtering.
 
-The PBDB has its own web API (<https://paleobiodb.org/data1.2>) from which you
-can get occurrences, collections, taxonomy and other things. In the code chunk
-below I've crafted the URL to download the data, but this already in the repo so
-doesn't need to be run.
+The PBDB has its own web API (<https://paleobiodb.org/data1.2>) from which you can get occurrences, collections, taxonomy and other things. In the code chunk below I've crafted the URL to download the data, but this is already in the repo so doesn't need to be run.
 
 **Do not run the following chunk, the data is already in the repo.**
 
 ```{r download_pbdb_data, eval = FALSE}
-# DO NOT RUN THIS CHUNK
+#### DO NOT RUN THIS CHUNK ####
 pbdb_url <-
   "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Ichthyosauromorpha&interval=Callovian,Oxfordian,Kimmeridgian,Tithonian&show=paleoloc"
 
@@ -414,19 +406,13 @@ occ_ichthyosaurs <-
   read_csv(pbdb_url)
 ```
 
-The part of the URL `show=paleoloc` is the important bit as the PBDB has already
-computed the palaeocoordinates of most occurrences using their modern location
-and the ages of the occurrences. Conveniently using the default GPlates model
-used to map the palaeogeography.
+The part of the URL `show=paleoloc` is the important bit as the PBDB has already computed the palaeocoordinates of most occurrences using their modern location and the ages of the occurrences. Conveniently using the same default GPlates model as the palaeogeography.
 
 ## Plotting occurrences ##
 
-With that all done, use the chuck below to add the occurrences onto the base
-map. These are plotted with `geom_point`, which you may be familiar with,
-setting the x and y values to the palaeolongitude and palaeolatitude
-respectively.
+With that all done, use the chunk below to add the occurrences onto the base map. These are plotted with `geom_point()`, which you may be familiar with, setting the _x_ and _y_ values to the palaeolongitude and palaeolatitude respectively.
 
-```{r plot_occurrences, fig.height = 4, fig.width = 7, fig.cap = "**Occurrences of ichthyosaurs from the Callovian–Tithonian.** Palaeogeographical map shows the distribution of land in the Kimmeridgian (155 Ma).", warning = FALSE}
+```{r plot_occurrences, fig.height = 4, fig.width = 7, fig.cap = "**Occurrences of ichthyosaurs from the Callovian–Tithonian.** Palaeogeographical map shows the distribution of land in the Kimmeridgian (155 Ma) reconstructed by @Cao2017Bb. Occurrences of Ichthyosauromorpha are from the Palaeobiology Database.", warning = FALSE}
 occ_ichthyosaurs <-
   read_csv("data/occurrences/2021-02-18-ichthyosaur-occurrences.csv")
 occ_plot <-
@@ -441,67 +427,147 @@ occ_plot <-
 occ_plot
 ```
 
-The more eagle-eyed of you may notice that some of these _marine_ ichthyosaur
-occurrences are located resolutely in the middle of landmasses. There are a few
-possible reasons for that:
+The more eagle-eyed of you may notice that some of these _marine_ ichthyosaur occurrences are located resolutely in the middle of landmasses. There are a few possible reasons for that:
 
 1. The palaeogeographical reconstruction is wrong.
-2. The modern location for the occurrence is wrong, so the palaeocoordinates are
-   wrong.
+2. The modern location for the occurrence is wrong, so the palaeocoordinates are wrong.
 3. The age of the occurrence is wrong, so its reconstructed position is wrong.
 
-These three are worth considering in detail.
+These three are worth considering further. 
 
-_Incorrect palaeogeographical reconstruction_ is perhaps the most obvious
-answer: this is difficult to do and there will always be some uncertainty with
-reconstructing the earth 155 million years ago. However, the method used by
-@Cao2017Bb involved using PBDB data to reconstruct the borders of sea and land
-based on the facies that occurrences are in. The palaeogeography should match
-the PBDB well then, particularly in well-studied and sampled periods and
-locations. There are, however, some parts that cannot certainly reconstructed
-because of a lack of data, rock availability, or accessibility.
+_Incorrect palaeogeographical reconstruction_ is perhaps the most obvious answer: these reconstructions are difficult and there will always be some uncertainty with reconstructing the earth 155 million years ago. However, the method of @Cao2017Bb included palaeoenvironments reconstructed using PBDB data to improve confidence in the borders of sea and land. The palaeogeography should match the PBDB well then, particularly in well-studied and sampled periods and locations. There are, however, some parts that cannot certainly reconstructed because of a lack of data, rock availability, or accessibility.
 
-_Incorrect modern location_ may be the easiest to discount as localities tend to
-be spatially constrained and identifiable, even in older literature. This being
-the case, there should only be minor error in the locations of occurrences (~10s
-km).
+_Incorrect modern location_ may be the easiest to discount as localities tend to be spatially constrained and identifiable, even in older literature. This being the case, there should only be minor error in the locations of occurrences (~10s km).
 
-_Incorrect age assignment_ is probably the most likely cause, or perhaps better
-_imprecise_ ages. The
-palaeocoordinates calculated for each occurrence in the PBDB use the midpoint of
-its temporal range. Sometimes this range can be quite large, such as the several
-species of _Undorosaurus_ that cover the whole Late Jurassic (163.5–145 Ma in
-[GTS 2020/03](https://stratigraphy.org/ICSchart/ChronostratChart2020-03.pdf)).
-Those specimens from Patagonia that are plotted in the middle of the land are
-also similarly imprecisely dated. Their palaeocoordinates are reconstructed to
-the middle Kimmeridgian, whereas they are likely later (given the occurrence of
-ichthyosaurs from similar locations) when there was a sea there to swim in.
+_Incorrect age assignment_ is probably the most likely cause, or perhaps better _imprecise_ ages. The palaeocoordinates calculated for each occurrence in the PBDB use the midpoint of its temporal range. Sometimes this range can be quite large, such as the several species of _Undorosaurus_ that cover the whole Late Jurassic (163.5–145 Ma in [GTS 2020/03](https://stratigraphy.org/ICSchart/ChronostratChart2020-03.pdf)). Those specimens from Patagonia that are plotted in the middle of the land are also similarly imprecisely dated. Their palaeocoordinates are reconstructed to the middle Kimmeridgian, whereas they are likely later (given the occurrence of ichthyosaurs from similar locations) when there was a sea there to swim in.
 
-As the ichthyosaur occurrences included over over 20 my of earth history there
-will be changes in palaeogeography, and some potentially imprecise dating.
+As the ichthyosaur occurrences included over over 20 my of earth history there will be changes in palaeogeography, and some potentially imprecise dating.
 
-The ways around this are to have more time slices with the occurrences plotted,
-but this complicates the code and any plots. Alternatively, aim to use only the
-most precisely dated occurrences, if possible, but this can remove lots of
-useful data. Ultimately, you may just have to accept that some marine
-occurrences may appear on land, or vice versa.
+The ways around this are to have more time slices with the occurrences plotted, but this complicates the code and any plots, and such precise reconstructions may not be available. Alternatively, aim to use only the most precisely dated occurrences, if possible, but this can remove lots of useful data. Ultimately, you may just have to accept that some marine occurrences may appear on land, or vice versa.
 
 ## Going further 2: separating occurrences with facets ##
 
-The final thing that you can try is to use the _faceting_ power of _ggplot2_ to
-separate our different groups of occurrences. Below, this code splits out the
-occurrences by their accepted taxonomic rank. Most occurrences are just
-non-diagnostic vertebral material, so can't be assigned to a family, genus or species.
-These are listed under 'unranked_clade'.
+The final thing that you can try is the _faceting_ power of _ggplot2_ to separate the different groups of occurrences. Below, this code splits out the occurrences by their accepted taxonomic rank. Most occurrences are just non-diagnostic vertebral material, so can't be assigned to a family, genus or species. These are listed under 'unranked_clade'.
 
 Conveniently, creating facets is as simple as adding a single line.
 
-```{r facet_plot, fig.width = 7, fig.height = 14, fig.cap = "**Occurrences of ichthyosaurs in the Callovian–Tithonia separated by identified rank.** Palaeogeographical maps shows distribution of land in the Kimmeridgian (155 Ma).", warning = FALSE}
+```{r facet_plot, fig.width = 7, fig.height = 14, fig.cap = "**Occurrences of ichthyosaurs in the Callovian–Tithonian separated by identified rank.** Palaeogeographical maps shows distribution of land in the Kimmeridgian (155 Ma) reconstructed by @Cao2017Bb.", warning = FALSE}
 occ_plot +
   facet_wrap(vars(accepted_rank), ncol = 1)
 ```
 
+## Exercises 4 ##
 
-# Exercises #
+1. Look at the PBDB web API (<https://paleobiodb.org/data1.2>). What other options and data sets can you access with this? Can you craft a URL that will download occurrence data of Tithonian bivalves.
+  - This download may not work on Binder, so you should do it in R on your own computer.
+2. Try adding colour or shapes to you occurrence points using the options in `geom_point`.
+3. Download and plot the palaeogeographical map and occurrences for your favourite group in your favourite stage. Again this should be done on your own computer. Beware it may take a while if you want to plot many occurrences.
+4. It's also useful to separate out occurrences on the map, for instance, can you colour occurrences within the outside the tropics differently? say red in the tropics (±23.5°) and blue outside.
+  - Hint: you can use the palaeocoordinates of the PBDB data to assign a group to each occurrence, use this to colour the points in `geom_point`.
+  - Hint: use `scale_colour_discrete` to colour the points. See the code of `palaeogeog_map_niceties` (`functions/palaeogeog_map_niceties.R`) for an example of doing this.
 
+
+# Suggested solutions to exercises #
+
+Not all of the exercise questions have a single obvious solution, particularly ones where you pick your favourite period. But here are some code suggestions for you to check against.
+
+## Exercises 1 ##
+
+1. Find an example of a palaeogeographical map for your favourite time period.
+  - You can have a look at Deep Time Maps or Paleomap for easy examples, or you can find others in papers.
+2. Have a look in the folder `GplatesSampleData` to see what other projects are included. 
+  - The `GplatesSampleData/FeatureCollections` directory is the one to look at. It includes:
+    + Other plate reconstructions.
+    + Ocean boundaries.
+    + Plate flow lines.
+    + Large igneous provinces … among other things.
+
+## Exercises 2 ##
+
+1. Have a look at the [GWS documentation](<https://github.com/GPlates/gplates_web_service_doc/wiki>). What address would you use to get reconstructed coastlines in the early Carboniferous using the @Matthews2016GPC model?
+  - `"https://gws.gplates.org/reconstruct/coastlines/?&time=350&model=MATTHEWS2016_mantle_ref"`
+  - You could also use `"MATTHEWS2016_pmag_ref"`. These are two different reconstruction methods.
+2. Open an example of the OGR-GMT data from the GWS, either from the `data/GWS` folder or by downloading it. Can you see how the polygons are stored? How are different polygons identified?
+  - The metadata at the top has lines beginning with `# @`, including describing how the data for each polygon is organised.
+  - Each polygon has a line of metadata describing it and `@P` indicating it's a polygon.
+  - Sometimes without metadata for each polygon, they are indicated with numbers: `@P1`, `@P2` etc.
+3. Now look at the tidied version in R, i.e. `kimmeridgian_coastlines` or `kimmeridgian_polygons`. By default this will only show the first 10 rows, but you can see more with, for example, `head(kimmeridgian_polygons, n = 50L)`. Can you see how the OGR-GMT data is transferred to this tidy format?
+  - The data is stored in a tibble with each point in a row and columns for the longitude and latitude of the points.
+  - The order that the points should be plot and the piece, group, and id of the polygon that they belong to are also included to separate the shapes.
+  - These ID columns are taken from the metadata for each polygon define in the input OGR-GMT file.
+4. Play around with the inputs to the plot above. How messy or colourful can you make this map? What options are there in `theme_map()`? (Hint: use `?theme_map` to see.)
+  - I'll leave this to your imagination.
+
+## Exercises 3 ##
+
+1. Try plotting this map with different projections (see above and `?mapproject`). Does this work well for all projections? Why?
+  - Some of the projections move the line of 0° longitude away from the centre or have polygons that cross from one side of the map to the other. This can sometimes lead to shapes being drawn right across the map. I'm not sure whether the best way to counteract this is in redrawing the polygons or something to do with the map projection.
+2. Look at the code behind `palaeogeog_map_niceties()` (in `functions/palaeogeog_map_niceties.R`). Modify this to add different lines of latitude. Can you add lines of longitude too? What about changing the colour?
+  - In `palaeogeog_map_niceties` I stored the lines of latitude that I want as a tibble that describe _line segments._ New lines of latitude can be added by creating a new row with the value _y_ set to your latitude. The lines are described as going from -180°–+180° longitude at a specific single latitude.
+  - For lines of longitude, I'd suggest using a new `geom_segment` layer. Modify the code so that the _y_ value covers the range of latitudes –90°–+90° at a specific longitude. Here's an example drawing lines of longitude at -50°, 0° and 72°:
+
+```{r exercise3.2, eval = FALSE}
+geom_segment(
+  data = tibble(
+    x = c(-50, 0, 72),
+    y = rep(-90, 3),
+    yend = rep(90, 3)
+  ),
+  aes(x = x, xend = x, y = y, yend = yend),
+  colour = "grey70", size = 0.3
+)
+```
+
+3. Can you try creating your own palaeogeographical map for your favourite time? This should be done on your own computer. Follow the instructions above to export data from GPlates then plot in R, making sure you change all the file and object names.
+  - here you'll have to modify the code above for your own GPlates data. Remember to add in the ice caps to the layer if you pick a time with these, such as the Carboniferous or the Neogene.
+
+## Exercises 4 ##
+
+1. Look at the PBDB web API (<https://paleobiodb.org/data1.2>). What other options and data sets can you access with this? Can you craft a URL that will download occurrence data of Tithonian bivalves.
+  - "https://paleobiodb.org/data1.2/occs/list.csv?base_name=Bivalvia&interval=Tithonian&show=paleoloc" 
+2. Try adding colour or shapes to your occurrence points using the options in `geom_point`.
+  - Use the `colour` and `shape` arguments.
+3. Download and plot the palaeogeographical map and occurrences for your favourite group in your favourite stage. Again this should be done on your own computer. Beware it may take a while if you want to plot many occurrences.
+  - Use the code above, but change the relevant URLs and data files to your own GPlates and PBDB data. Don't forget to add ice caps if you have them.
+  - Hopefully the PBDB API will be working as it wasn't when I was writing this!
+4. It's also useful to separate out occurrences on the map, for instance, can you colour occurrences within the outside the tropics differently? say red in the tropics (±23.5°) and blue outside.
+  - You'll need to assign a column of identifiers for tropical and non-tropical occurrences. Below is an example using the _dplyr_ function `case_when`.
+  - With that done it'll fit right into the plotting code from earlier, but you will need to specify the `colour` argument. If you want to make it blue and red then you can add a scale.
+
+```{r exercise4.4, fig.width = 7, fig.height = 4, fig.cap = "**Occurrences of ichthyosaurs in the Callovian–Tithonian indicated by latitude region.** Palaeogeographical maps shows distribution of land in the Kimmeridgian (155 Ma) reconstructed by @Cao2017Bb."}
+ex_occ_ichthyosaurs <-
+  occ_ichthyosaurs %>%
+    mutate(
+      tropical = case_when(
+        paleolat <= 23.5 & paleolat >= -23.5 ~ "tropical",
+        paleolat > 23.5 | paleolat < -23.5   ~ "non-tropical"
+      ) %>%
+        as_factor()
+    )
+
+ex_occ_plot <-
+  map_plot +
+    geom_point(
+      data = ex_occ_ichthyosaurs,
+      aes(
+        x = paleolng,
+        y = paleolat,
+        colour = tropical
+      ),
+      na.rm = TRUE
+    ) +
+    scale_discrete_manual(
+      values = 
+        c(
+          "tropical" = "red",
+          "non-tropical" = "blue"
+        ),
+        aesthetics = c("colour"),
+        name = "Latitude"
+      )
+ex_occ_plot
+```
+
+
+# References #
 

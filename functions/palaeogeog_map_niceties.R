@@ -27,7 +27,7 @@ palaeogeog_map_niceties <- function() {
             "Mountain"       = "#FF8D51",
             "Shallow marine" = "#45D8FF"
           ),
-        aesthetics = c("colour", "fill"),
+        aesthetics = c("fill"),
         name = "Palaeogeography"
       ),
       theme(legend.position = "bottom")
