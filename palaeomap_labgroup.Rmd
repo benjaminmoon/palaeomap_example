@@ -20,26 +20,11 @@ output:
 bibliography: bibliography.yaml
 ---
 
-* [X] Describe map plotting and polygons
-* [X] Separate function files
-* [X] Add GitHub link
-* [X] Add exercises
-  - [X] look at OGR data
-  - [X] reconstruct other map
-  - [X] add other occurrences
-  - [X] separate latitude with colours
-  - [X] add exercise answers
-* [X] Add RStudio images to introduction
-* [X] GPlates export images
-* [X] Revise to second person
-* [ ] Proofread
-
-
 # Introduction #
 
-This guides takes you through two different work flows to create palaeogeographical maps and plot occurrences fossil taxa. All the code and data are in this GitHub repository: <https://github.com/benjaminmoon/palaeomap_example>
+This guide takes you through two different work flows to create palaeogeographical maps and plot occurrences fossil taxa in R. All the code and data are in this GitHub repository: <https://github.com/benjaminmoon/palaeomap_example>
 
-You can run this code directly on your machine, or follow along online at Binder where I've created an environment to run with all of the data you need. Click the link below to open this in your web browser.
+You can download and run this code directly on your machine, or follow along online at Binder where I've created an environment with all of the data you need. Click the link below to open this in your web browser.
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminmoon/palaeomap_example/HEAD?urlpath=rstudio)
 
