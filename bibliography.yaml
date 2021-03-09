@@ -1,0 +1,316 @@
+---
+references:
+- id: Bradshaw1992GSLM
+  author:
+    - family: Bradshaw
+      given: M J
+    - family: Cope
+      given: John Christopher Wolverson
+    - family: Cripps
+      given: D W
+    - family: Donovan
+      given: D T
+    - family: Howarth
+      given: Michael Kingsley
+    - family: Rawson
+      given: P F
+    - family: West
+      given: I M
+    - family: Wimbledon
+      given: William Albert
+  container-title: Geological Society, London, Memoirs
+  DOI: 10.1144/GSL.MEM.1992.013.01.12
+  issue: '1'
+  issued:
+    - year: 1992
+      month: 1
+  language: English
+  page: 107-129
+  title: Jurassic
+  type: article-journal
+  URL: http://dx.doi.org/10.1144/GSL.MEM.1992.013.01.12
+  volume: '13'
+
+- id: Cao2017Bb
+  abstract: >-
+    <p><strong class="journal-contentHeaderColor">Abstract.</strong>
+    Paleogeographic reconstructions are important to understand Earth's tectonic
+    evolution, past eustatic and regional sea level change, paleoclimate and
+    ocean circulation, deep Earth resources and to constrain and interpret the
+    dynamic topography predicted by mantle convection models. Global
+    paleogeographic maps have been compiled and published, but they are
+    generally presented as static maps with varying map projections, different
+    time intervals represented by the maps and different plate motion models
+    that underlie the paleogeographic reconstructions. This makes it difficult
+    to convert the maps into a digital form and link them to alternative digital
+    plate tectonic reconstructions. To address this limitation, we develop a
+    workflow to restore global paleogeographic maps to their present-day
+    coordinates and enable them to be linked to a different tectonic
+    reconstruction. We use marine fossil collections from the Paleobiology
+    Database to identify inconsistencies between their indicative
+    paleoenvironments and published paleogeographic maps, and revise the
+    locations of inferred paleo-coastlines that represent the estimated maximum
+    transgression surfaces by resolving these inconsistencies. As a result, the
+    consistency ratio between the paleogeography and the paleoenvironments
+    indicated by the marine fossil collections is increased from an average of
+    75 % to nearly full consistency (100 %). The paleogeography in the main
+    regions of North America, South America, Europe and Africa is significantly
+    revised, especially in the Late Carboniferous, Middle Permian, Triassic,
+    Jurassic, Late Cretaceous and most of the Cenozoic. The global flooded
+    continental areas since the Early Devonian calculated from the revised
+    paleogeography in this study are generally consistent with results derived
+    from other paleoenvironment and paleo-lithofacies data and with the
+    strontium isotope record in marine carbonates. We also estimate the
+    terrestrial areal change over time associated with transferring
+    reconstruction, filling gaps and modifying the paleogeographic geometries
+    based on the paleobiology test. This indicates that the variation of the
+    underlying plate reconstruction is the main factor that contributes to the
+    terrestrial areal change, and the effect of revising paleogeographic
+    geometries based on paleobiology is secondary.</p>
+  accessed:
+    - year: 2021
+      month: 2
+      day: 15
+  author:
+    - family: Cao
+      given: Wenchao
+    - family: Zahirovic
+      given: Sabin
+    - family: Flament
+      given: Nicolas
+    - family: Williams
+      given: Simon
+    - family: Golonka
+      given: Jan
+    - family: Müller
+      given: R. Dietmar
+  container-title: Biogeosciences
+  DOI: 10.5194/bg-14-5425-2017
+  ISSN: 1726-4170
+  issue: '23'
+  issued:
+    - year: 2017
+      month: 12
+  language: English
+  page: 5425-5439
+  publisher: Copernicus GmbH
+  source: bg.copernicus.org
+  title: Improving global paleogeography since the late Paleozoic using paleobiology
+  type: article-journal
+  URL: https://bg.copernicus.org/articles/14/5425/2017/
+  volume: '14'
+
+- id: Gao2019JP
+  abstract: >-
+    Plesiosaurs are one of the common groups of aquatic reptiles in the
+    Mesozoic, which mainly lived in marine environments. Freshwater plesiosaurs
+    are rare in the world, especially from the Jurassic....
+  author:
+    - family: Gao
+      given: Ting
+    - family: Li
+      given: Da-Qing
+    - family: Li
+      given: Long-Feng
+    - family: Yang
+      given: Jing-Tao
+  container-title: Journal of Palaeogeography
+  container-title-short: J. Palaeogeogr.
+  DOI: 10.1186/s42501-019-0043-5
+  issued:
+    - year: 2019
+      month: 8
+      day: 13
+  language: en-US
+  title: >-
+    The first record of freshwater plesiosaurian from the Middle Jurassic of
+    Gansu, NW China, with its implications to the local palaeobiogeography
+  type: article-journal
+  URL: >-
+    http://link.springer.com/article/10.1186/s42501-019-0043-5?utm_source=researcher_app&utm_medium=referral&utm_campaign=RESR_MRKT_Researcher_inbound
+
+- id: Golonka2007G
+  abstract: >-
+    Artykuł przedstawia szczegółowe mapy obrazujące tektonikę płyt,
+    paleogeografię, paleośrodowisko i paleolitofacje ośmiu mezozoicznych
+    przedziałów czasowych. Mapy te dotyczą przedziałów czasowych w obrębie
+    triasu, jury i kredy. Głównym konwergentnym wydarzeniem w okresie późnego
+    triasu była orogeneza indochińska, czyli kolizja Indochin i Indonezji z
+    południowymi Chinami, oraz konsolidacja bloków chińskich. Postępujący w
+    kierunku północnym dryft płyt kimeryjskich spowodował zamykanie oceanu
+    Paleotetyda i otwieranie się oceanu Neotetyda. Aktywna tektonika płyt na
+    granicy triasu i jury spowodowała zmiany paleogeograficzne i
+    paleoklimatyczne, które wywołały masowe wymieranie gatunków fauny i flory.
+    Rifting Atlantyku centralnego w okresie wczesnej jury poprzedził
+    środkowojurajski i późnojurajski spreding tego oceanu. W kredzie nastąpił
+    dalszy spreding Atlantyku centralnego, jak również narodziny Atlantyku
+    południowego i Oceanu Indyjskiego. Wydarzenia te prowadziły do największego
+    w fanerozoiku rozproszenia kontynentów.
+  accessed:
+    - year: 2021
+      month: 2
+      day: 13
+  author:
+    - family: Golonka
+      given: J.
+  container-title: Geologia
+  ISSN: 0138-0974
+  issue: '2'
+  issued:
+    - year: 2007
+  language: en-GB
+  page: 211-264
+  source: www.infona.pl
+  title: 'Phanerozoic paleoenvironment and paleolithofacies maps: Mesozoic'
+  title-short: Phanerozoic paleoenvironment and paleolithofacies maps
+  type: article-journal
+  URL: >-
+    https://www.infona.pl//resource/bwmeta1.element.baztech-article-AGH5-0014-0139
+  volume: '33'
+
+- id: Golonka2007Ga
+  abstract: >-
+    Artykuł przedstawia szczegółowe mapy obrazujące tektonikę płyt,
+    paleogeografię, paleośrodowisko i paleolitofacje ośmiu przedziałów czasowych
+    późnego paleozoiku. Mapy dotyczą szeregu przedziałów czasowych w obrębie
+    dewonu, karbonu i permu. Wzajemne stosunki pomiędzy konfiguracją
+    kontynentów, litofacjami, tektoniką płyt i klimatem, jakie panowały w
+    okresie od rozpadu superkontynentu Oldredia aż po powstania nowego
+    superkontynentu Pangen, są wyraźnie zaznaczone na poszczególnych mapach
+    tworzących spójną serię rekonstrukcji palinspastycznych. Rozkład litofacji
+    jest wyraźnie związany z rozpadem i łączeniem się kontynentów, a także ze
+    zmianami klimatu wywołanymi tektoniką płyt. Rozpad kontynentów i tworzenie
+    się oceanów wpłynęło na powstanie basenów związanych z ryftingiem i rozwojem
+    krawędzi pasywnych. Łączenie się kontynentów przyczyniło się do tworzenia
+    basenów przedgórskich. Strefy subdukcji związane są z basenami załukowymi.
+    Zmiany klimatu i wymieranie są związane z reorganizacją płyt i aktywnością
+    pióropuszy płaszcza.
+  accessed:
+    - year: 2021
+      month: 2
+      day: 13
+  author:
+    - family: Golonka
+      given: J.
+  container-title: Geologia
+  ISSN: 0138-0974
+  issue: '2'
+  issued:
+    - year: 2007
+  language: en-GB
+  page: 145-209
+  source: www.infona.pl
+  title: 'Phanerozoic paleoenvironment and paleolithofacies maps: late Paleozoic'
+  title-short: Phanerozoic paleoenvironment and paleolithofacies maps
+  type: article-journal
+  URL: >-
+    https://www.infona.pl//resource/bwmeta1.element.baztech-article-AGH5-0014-0138
+  volume: '33'
+
+- id: Golonka2009G
+  accessed:
+    - year: 2021
+      month: 2
+      day: 13
+  author:
+    - family: Golonka
+      given: J.
+  container-title: Geologia
+  ISSN: 0138-0974
+  issue: '4'
+  issued:
+    - year: 2009
+  language: en-GB
+  page: 589-654
+  source: yadda.icm.edu.pl
+  title: 'Phanerozoic paleoenvironment and paleolithofacies maps: Early Paleozoic'
+  title-short: Phanerozoic paleoenvironment and paleolithofacies maps
+  type: article-journal
+  URL: >-
+    http://yadda.icm.edu.pl/yadda/element/bwmeta1.element.baztech-article-AGHM-0011-0002
+  volume: '35'
+
+- id: Matthews2016GPC
+  accessed:
+    - year: 2020
+      month: 12
+      day: 30
+  author:
+    - family: Matthews
+      given: Kara J.
+    - family: Maloney
+      given: Kayla T.
+    - family: Zahirovic
+      given: Sabin
+    - family: Williams
+      given: Simon E.
+    - family: Seton
+      given: Maria
+    - family: Müller
+      given: R. Dietmar
+  container-title: Global and Planetary Change
+  container-title-short: Global Planet. Change
+  DOI: 10.1016/j.gloplacha.2016.10.002
+  ISSN: '09218181'
+  issued:
+    - year: 2016
+      month: 11
+  language: en
+  page: 226-250
+  source: DOI.org (Crossref)
+  title: Global plate boundary evolution and kinematics since the late Paleozoic
+  type: article-journal
+  URL: https://linkinghub.elsevier.com/retrieve/pii/S0921818116302417
+  volume: '146'
+
+- id: Zverkov2020GM
+  abstract: >-
+    Marine reptile occurrences are rare in the Lower Jurassic Series outside of
+    Europe. Here we describe diverse marine reptile faunas from the Lower
+    Jurassic Series (Pliensbachian and Toarcian stages, including the
+    Toarcian–Aalenian boundary interval) of Eastern Siberia. The taxonomic
+    composition of Toarcian marine reptile assemblages of Siberia highlight
+    their cosmopolitan nature, with the presence of taxa previously known nearly
+    exclusively from coeval strata of Europe, such as ichthyosaurians
+    Temnodontosaurus and Stenopterygius, microcleidid plesiosaurians (including
+    the genus Microcleidus), rhomaleosaurids and basal pliosaurids. The
+    palaeogeographic reconstruction places these faunas to the palaeopolar
+    region, north of the 80th northern parallel and up to the palaeo north pole
+    (upper value within the 95% confidence interval for some of the localities).
+    The materials include remains of both mature and juvenile (or even infant,
+    judging by their very small size and poor ossification) animals, indicating
+    a possibility that these polar seas may serve as a breeding area. The
+    diversity and abundance of plesiosaurians and ichthyosaurians, along with a
+    lack of thalattosuchian remains (considering their wide distribution
+    elsewhere at low latitudes), is an additional argument that plesiosaurians
+    and neoichthyosaurians were able to live and reproduce in a polar
+    environment. There is no certainty whether these animals lived in polar seas
+    permanently, or whether they were taking seasonal migrations. However, given
+    the polar night conditions at high latitudes, the latter seems more
+    plausible, and both these scenarios are further indirect evidence that these
+    groups likely had a high metabolism.
+  accessed:
+    - year: 2021
+      month: 1
+      day: 8
+  author:
+    - family: Zverkov
+      given: Nikolay G.
+    - family: Grigoriev
+      given: Dmitry V.
+    - family: Danilov
+      given: Igor G.
+  container-title: Geological Magazine
+  DOI: 10.1017/S0016756820001351
+  ISSN: 0016-7568, 1469-5081
+  issued:
+    - year: 2020
+  language: en
+  page: 1-18
+  publisher: Cambridge University Press
+  source: Cambridge University Press
+  title: Early Jurassic palaeopolar marine reptiles of Siberia
+  type: article-journal
+  URL: >-
+    https://www.cambridge.org/core/journals/geological-magazine/article/abs/early-jurassic-palaeopolar-marine-reptiles-of-siberia/0095A8827A14D874782B85D1058D0562
+...
