@@ -7,3 +7,8 @@ dependencies:
   - r-broom
   - r-rgdal
   - r-mapproj
+  - r-highr
+  - r-markdown
+  - r-yaml
+  - r-knitr
+  - r-rmarkdown
