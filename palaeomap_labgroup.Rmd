@@ -438,7 +438,7 @@ Conveniently, creating facets is as simple as adding a single line.
 
 ```{r facet_plot, fig.width = 7, fig.height = 14, fig.cap = "**Occurrences of ichthyosaurs in the Callovian–Tithonian separated by identified rank.** Palaeogeographical maps shows distribution of land in the Kimmeridgian (155 Ma) reconstructed by @Cao2017Bb.", warning = FALSE}
 occ_plot +
-  facet_wrap(vars(accepted_rank), ncol = 1)
+  facet_wrap(vars(accepted_rank), ncol = 2)
 ```
 
 ## Exercises 4 ##
