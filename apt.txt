@@ -1,4 +1,5 @@
 build-essential
+libstdc++6
 gdal-bin
 proj-bin
 libgdal-dev
