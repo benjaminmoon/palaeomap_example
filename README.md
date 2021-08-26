@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminmoon/palaeomap_example/HEAD?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/benjaminmoon/palaeomap_example/HEAD?urlpath=rstudio) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3584386.svg)](https://doi.org/10.5281/zenodo.3584386)
 
 # Making Palaeogeographical Maps Using R and GPlates
 
