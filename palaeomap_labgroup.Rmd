@@ -200,7 +200,7 @@ Among the projects included with the GPlates download is the set of palaeogeogra
 
 @Cao2017Bb used a combination of previous palaeogeographical reconstructions, and updated the coastlines, mountains, and extent of land and ice caps using occurrence data from the PBDB. In a few locations, what had been reconstructed as land produced marine fossils, when accounting for the movement of plates, and vice versa.
 
-These reconstructions include four layers that have the separated palaeoevonvironmental regions:
+These reconstructions include four layers that have the separated palaeoenvironmental regions:
 
 * Shallow marine: shelf seas.
 * Land: terrestrial habitats outlined by coastlines.

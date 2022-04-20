@@ -1,13 +1,17 @@
 ---
 title: "Plotting Palaeogeographical Maps in R: an Example"
 author: Ben M
-# - name: Ben Moon
-  # affiliation: Palaeobiology Research Group, School of Earth Sciences, University of Bristol, Bristol, U.K.
-  # email: benjamin.moon@bristol.ac.uk
-date: 2021-02-18
+date: 2021-03-11
 fig_caption: true
 output: beamer_presentation
 ---
+
+# Plotting Palaeogeographical Maps in R
+
+- Run in the cloud on Binder: <https://bit.ly/2N86wYf>
+- _OR_
+- Download code from GitHub: <https://bit.ly/38tBH7U>
+
 
 # Palaeogeographical Maps
 
@@ -32,7 +36,8 @@ library(mapproj)
 library(rgdal)
 library(tidyverse)
 
-source("functions/functions.R")
+list.files("functions/", full.names = TRUE, pattern = "\\.R") %>%
+  walk(source)
 ```
 
 # GPlates Web Service
